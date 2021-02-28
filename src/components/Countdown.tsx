@@ -1,7 +1,9 @@
 import { useContext } from 'react'
 import { CountdownContext } from '../contexts/CountdownContext'
 import { Button } from '../styles/components/ButtonStyles';
-import styles from '../styles/components/Countdown.module.css'
+import { Container } from '../styles/components/CountdownStyles';
+import {ReactComponent as Cross} from '../../public/icons/cross.svg';
+import {ReactComponent as Arrow} from '../../public/icons/arrow.svg';
 
 
 export function Countdown () {
@@ -19,7 +21,7 @@ export function Countdown () {
 
   return (
     <div>
-      <div className={styles.countdownContainer}>
+      <Container>
         <div>
           <span>{minuteLeft}</span>
           <span>{minuteRight}</span>
@@ -29,12 +31,11 @@ export function Countdown () {
           <span>{secondLeft}</span>
           <span>{secondRight}</span>
         </div>
-      </div>
+      </Container>
 
       {hasFinished ? (
         <Button
         disabled
-        className={styles.countdownButton}
         >
           Ciclo encerrado
          <img src="/icons/check.svg" alt="Ciclo encerrado"/>
@@ -48,12 +49,14 @@ export function Countdown () {
           onClick={resetCountdown}
           >
             Abandonar ciclo
+            <Cross />
           </Button> 
         ): <Button
         type="button"
         onClick={startCountdown}
         >
           Iniciar um ciclo
+          <Arrow />
         </Button>}
         </>
       )}

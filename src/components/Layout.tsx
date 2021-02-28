@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { signOut } from 'next-auth/client'
 import {ReactComponent as Home} from '../../public/icons/home.svg';
 import {ReactComponent as Leaderboard} from '../../public/icons/leaderboard.svg';
+import {ReactComponent as Logo} from '../../public/assets/logo_min.svg';
 import { useRouter } from 'next/router';
 
 const Layout = ({children}) => {
@@ -11,7 +12,7 @@ const Layout = ({children}) => {
  return (
    <Container>
      <ContainerAside>
-        <img src="/assets/logo_min.svg" alt="Logo"/>
+        <Logo />
         <nav>
           <ul>
             <li className={router.pathname === "/challenges" ? "active" : ""}>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Overlay = styled.div`
-  background: rgba(242, 243, 245, 0.8);
+  background: ${({ theme }) => theme.modal};
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13,7 +13,7 @@ export const Overlay = styled.div`
   align-items: center;
 
   & .container > div{
-    background: var(--white);
+    background: ${({ theme }) => theme.card};
     width: 100%;
     max-width: 400px;
     padding: 2rem 3rem;
@@ -25,7 +25,7 @@ export const Overlay = styled.div`
     & header {
       font-size: 8.75rem;
       font-weight: 600;
-      color: var(--blue);
+      color: ${({ theme }) => theme.blueOne};
       background: url("/icons/levelup.svg") no-repeat center;
       background-size: contain;
       text-shadow: 0px 10px 16px rgba(89, 101, 224, 0.3);
@@ -33,12 +33,12 @@ export const Overlay = styled.div`
 
     & strong {
       font-size: 2.25rem;
-      color: var(--title);
+      color: ${({ theme }) => theme.title};
     }
 
     & p {
       font-size: 1.25rem;
-      color: var(--text);
+      color: ${({ theme }) => theme.text};
       margin-top: 0.25rem;
     }
 
@@ -56,12 +56,12 @@ export const Overlay = styled.div`
     width:100%;
     height:5rem;
     border:none;
-    background:#F5FCFF;
-    color:#2AA9E0;
+    background:${({ theme }) => theme.twitter};
+    color:${({ theme }) => theme.twitterColor};
     font-weight:500;
     font-size:1.1rem;
     border-radius: 0px 0px 5px 5px;
-    border-top:2px solid #DCDDE0;
+    border-top:2px solid ${({ theme }) => theme.lineBorder};
     display:flex;
     align-items:center;
     justify-content:center;
@@ -69,6 +69,9 @@ export const Overlay = styled.div`
     & svg {
       margin-left:.8rem;
       transition:.2s;
+      & path {
+        fill:${({ theme }) => theme.twitterColor};
+      }
     }
 
     &:hover{

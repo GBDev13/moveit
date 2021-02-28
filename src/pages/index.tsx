@@ -2,7 +2,6 @@ import { GetServerSideProps } from 'next';
 import { getSession, signIn, signOut, useSession } from 'next-auth/client'
 import Head from 'next/head';
 import {useRouter} from 'next/router'
-import Loading from '../components/Loading';
 import {HomeBackground, HomeContainer } from '../styles/pages/HomeStyles';
 
 export default function Home({sessions}) {
@@ -22,7 +21,7 @@ export default function Home({sessions}) {
          <img src="assets/logo.svg" alt="Logo da Moveit"/>
          <h3>Bem-vindo(a)</h3>
          <p><img src="icons/github.svg" alt="Github"/>Faça login com seu Github para começar</p>
-         <button type="button" onClick={() => signIn()}>Entrar com Github</button>
+         <button type="button" onClick={() => signIn('github')}>Entrar com Github</button>
         </div>
       </HomeContainer>
     </HomeBackground>

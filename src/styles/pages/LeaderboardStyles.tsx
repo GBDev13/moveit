@@ -10,7 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   & h2 {
-    color:#2E384D;
+    color:${({ theme }) => theme.title};
     font-size:3rem;
     margin-bottom:3rem;
   }
@@ -22,7 +22,7 @@ export const Container = styled.div`
     align-items:center;
     gap:20px;
     margin-bottom:1.5rem;
-    color:#666666;
+    color:${({ theme }) => theme.text};
     text-transform:uppercase;
     font-weight:bold;
     font-size:.9rem;
@@ -47,7 +47,7 @@ export const Container = styled.div`
       margin-bottom: .5rem;
 
       & > div {
-        background:#fff;
+        background:${({ theme }) => theme.card};
         padding:1rem;
         padding-left:2rem;
         width:100%;
@@ -55,7 +55,7 @@ export const Container = styled.div`
       }
 
       & > .info {
-        background:#fff;
+        background:${({ theme }) => theme.card};
         padding:1rem 0;
         display:flex;
         align-items:center;
@@ -64,9 +64,9 @@ export const Container = styled.div`
         & p {
           font-weight: 500;
           font-size:1rem;
-          color:#666666;
+          color:${({ theme }) => theme.text};
           & b {
-            color:#5965E0;
+            color:${({ theme }) => theme.blueOne};
           }
         }
       }
@@ -87,7 +87,7 @@ export const Container = styled.div`
         }
 
         & strong {
-          color:#2E384D;
+          color:${({ theme }) => theme.title};
           font-size: 1.2rem;
           font-weight: 600;
         }
@@ -104,9 +104,9 @@ export const Container = styled.div`
       }
 
       & > span{
-        background:#fff;
+        background:${({ theme }) => theme.card};
         border-radius:5px;
-        color:#666666;
+        color:${({ theme }) => theme.text};
         font-weight:500;
         font-size:1.5rem;
         padding:1rem;

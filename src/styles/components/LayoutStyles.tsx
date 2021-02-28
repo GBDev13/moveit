@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ContainerAside = styled.aside`
   width:100%;
   max-width:7rem;
-  background:#fff;
+  background:${({ theme }) => theme.card};
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -12,6 +12,11 @@ export const ContainerAside = styled.aside`
   padding:1.5rem;
   width:100%;
   max-width:7rem;
+  transition: all 0.50s linear;
+
+  & > svg path{
+    fill:${({ theme }) => theme.blueOne};
+  }
 
   & nav ul{
     display:flex;
@@ -22,12 +27,12 @@ export const ContainerAside = styled.aside`
       display:flex;
       align-items:center;
       & svg path{
-        stroke:#666666;
+        stroke:${({ theme }) => theme.text};
         transition:1s;
       }
       & svg {
         &:hover path{
-          stroke:#5965E0;
+          stroke:${({ theme }) => theme.blueOne};
         }
       }
       
@@ -40,11 +45,11 @@ export const ContainerAside = styled.aside`
           height:calc(100% + 1.5rem);
           content:'';
           display:inline-block;
-          background:#5965E0;
+          background:${({ theme }) => theme.blueOne};
           left:-64px;
         }
         & svg path{
-          stroke:#5965E0;
+          stroke:${({ theme }) => theme.blueOne};
         }
         & svg g {
           opacity:1;
@@ -59,7 +64,7 @@ export const ContainerAside = styled.aside`
     border:0;
     color:#fff;
     border-radius:5px;
-    background:#5965E0;
+    background:${({ theme }) => theme.blueOne};
 
   }
 

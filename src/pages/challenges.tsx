@@ -5,7 +5,6 @@ import { Profile } from "../components/Profile";
 
 import Head from 'next/head'
 
-import styles from '../styles/pages/Home.module.css'
 import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { GetServerSideProps } from "next";
@@ -13,6 +12,7 @@ import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { getSession } from "next-auth/client";
 import {useRouter} from 'next/router'
 import Layout from "../components/Layout";
+import { Container } from "../styles/pages/HomeStyles";
 
 interface HomeProps {
   level: number;
@@ -32,7 +32,7 @@ export default function Challenges(props:HomeProps) {
   if (props.sessions) return (
     <ChallengesProvider id={props.sessions.userId} level={props.user.level} currentExperience={props.user.currentExperience} challengesCompleted={props.user.challengesCompleted} totalExperience={props.user.totalExperience}>
     <Layout>
-      <div className={styles.container}>
+      <Container>
         <Head>
           <title>Desafios | move.it</title>
         </Head>
@@ -51,7 +51,7 @@ export default function Challenges(props:HomeProps) {
             </div>
           </section>
         </CountdownProvider>
-      </div>
+      </Container>
     </Layout>
     </ChallengesProvider>
   )

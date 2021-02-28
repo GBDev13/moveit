@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ChallengeBoxContainer = styled.div`
   height: 100%;
 
-  background: var(--white);
+  background: ${({ theme }) => theme.card};
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
 
@@ -56,7 +56,7 @@ export const ChallengeBoxContainer = styled.div`
   }
 
   & header {
-    color: var(--blue);
+    color: ${({ theme }) => theme.blueOne};
     font-weight: 600;
     font-size: 1.25rem;
     padding: 0 2rem 1.5rem;
@@ -73,7 +73,7 @@ export const ChallengeBoxContainer = styled.div`
     & strong {
       font-weight: 600;
       font-size: 2rem;
-      color: var(--title);
+      color: ${({ theme }) => theme.title};
       margin: 1.5rem 0 1rem;
     }
 
@@ -109,12 +109,12 @@ export const ChallengeBoxContainer = styled.div`
 
       transition: filter 0.2s;
       transition: background-color 0.2s;
-      border-right:1px solid #DCDDE0;
-      border-top:1px solid #DCDDE0;
+      border-right:1px solid ${({ theme }) => theme.lineBorder};
+      border-top:1px solid ${({ theme }) => theme.lineBorder};
 
       &.challengeFailedButton {
-        background: #FFF5F5;
-        color:var(--red);
+        background: ${({ theme }) => theme.failed};
+        color: ${({ theme }) => theme.failedColor};
         &:hover{
           background:var(--red);
           color:#fff;
@@ -122,8 +122,8 @@ export const ChallengeBoxContainer = styled.div`
       }
 
       &.challengeSucceededButton {
-        background: #F7FFF5;
-        color:var(--green);
+        background: ${({ theme }) => theme.success};
+        color: ${({ theme }) => theme.successColor};
         &:hover{
           background:var(--green);
           color:#fff;

@@ -14,7 +14,7 @@ export const Button = styled.button`
   border: 0;
   border-radius: 5px;
 
-  background: var(--blue);
+  background:  ${({ theme }) => theme.blueOne};
   color: #fff;
 
   font-size: 1.25rem;
@@ -27,10 +27,17 @@ export const Button = styled.button`
   }
 
   &.countdownActive{
-    background: var(--white);
-    color: var(--text);
+    background: ${({ theme }) => theme.card};
+    color: ${({ theme }) => theme.text};
     position:relative;
     border-bottom:5px solid #DCDDE0;
+
+    
+    & svg {
+      & path{
+        fill:${({ theme }) => theme.text};
+      }
+    }
 
     &:not(:disabled):hover {
       background: var(--red);
@@ -59,8 +66,8 @@ export const Button = styled.button`
   }
   
   &:disabled {
-    background: var(--white);
-    color: var(--text);
+    background: ${({ theme }) => theme.card};
+    color: ${({ theme }) => theme.text};
     cursor: not-allowed;
     border-bottom:5px solid var(--green);
     display:flex;
@@ -68,6 +75,10 @@ export const Button = styled.button`
     & img{
       margin-left:.5rem;
     }
+  }
+  
+  & svg {
+    margin-left:.8rem;
   }
 
 `;
