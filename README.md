@@ -13,6 +13,7 @@
 * Sistema de níveis, para gerar a gamificação comentada acima;
 * Leaderboard, mostrando os usuários com a maior quantidade de desafios concluídos em conta;
 * Design moderno e responsivo, contando com o tema dark.
+* Compartilhamento pelo twitter ao subir de nível, gerando automaticamente uma imagem customizada para cada usuário!
 
 ![mockups](https://user-images.githubusercontent.com/71772559/109436203-39e61980-79fd-11eb-9e22-33efefa0ed38.png)
 
