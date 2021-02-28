@@ -11,6 +11,11 @@ export default function Home({sessions}) {
     router.push('/challenges')
   }
 
+  console.log(process.env.DATABASE_URL)
+  console.log(process.env.GITHUB_ID)
+  console.log(process.env.GITHUB_SECRET)
+  console.log(process.env.NEXTAUTH_URL)
+
   return (
     <HomeBackground>
       <Head>
