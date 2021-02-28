@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { getSession, signIn, signOut, useSession } from 'next-auth/client'
+import Head from 'next/head';
 import {useRouter} from 'next/router'
 import Loading from '../components/Loading';
 import {HomeBackground, HomeContainer } from '../styles/pages/HomeStyles';
@@ -13,6 +14,9 @@ export default function Home({sessions}) {
 
   return (
     <HomeBackground>
+      <Head>
+        <title>Home | move.it</title>
+      </Head>
       <HomeContainer>
         <div>
          <img src="assets/logo.svg" alt="Logo da Moveit"/>

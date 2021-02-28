@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import Head from "next/head";
 import Layout from "../components/Layout";
 import { Container } from "../styles/pages/LeaderboardStyles";
 
@@ -13,6 +14,9 @@ export default function Leaderboard({users}) {
 
   return (
     <Layout>
+      <Head>
+        <title>Leaderboard | move.it</title>
+      </Head>
       <Container>
         <h2>Leaderboard</h2>
         <section>

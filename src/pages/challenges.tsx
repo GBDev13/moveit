@@ -34,7 +34,7 @@ export default function Challenges(props:HomeProps) {
     <Layout>
       <div className={styles.container}>
         <Head>
-          <title>Início | move.it</title>
+          <title>Desafios | move.it</title>
         </Head>
 
         <ExperienceBar />
