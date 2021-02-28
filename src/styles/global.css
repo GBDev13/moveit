@@ -50,3 +50,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+@keyframes roundtime {
+  to {
+    transform: scaleX(1);
+  }
+}

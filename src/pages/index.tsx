@@ -1,58 +1,47 @@
-import { CompletedChallenges } from "../components/CompletedChallenges;";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
+import { GetServerSideProps } from 'next';
+import { getSession, signIn, signOut, useSession } from 'next-auth/client'
+import {useRouter} from 'next/router'
+import Loading from '../components/Loading';
+import {HomeBackground, HomeContainer } from '../styles/pages/HomeStyles';
 
-import Head from 'next/head'
+export default function Home({sessions}) {
+  const router = useRouter();
+  
+  if (typeof window !== 'undefined' && sessions){
+    router.push('/challenges')
+  }
 
-import styles from '../styles/pages/Home.module.css'
-import { ChallengeBox } from "../components/ChallengeBox";
-import { CountdownProvider } from "../contexts/CountdownContext";
-import { GetServerSideProps } from "next";
-import { ChallengesProvider } from "../contexts/ChallengesContext";
-
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
-
-export default function Home(props:HomeProps) {
   return (
-    <ChallengesProvider level={props.level} currentExperience={props.currentExperience} challengesCompleted={props.challengesCompleted}>
-    <div className={styles.container}>
-      <Head>
-        <title>Início | move.it</title>
-      </Head>
-
-      <ExperienceBar />
-      
-      <CountdownProvider>
-        <section>
-          <div>
-            <Profile />
-            <CompletedChallenges />
-            <Countdown />
-          </div>
-          <div>
-            <ChallengeBox />
-          </div>
-        </section>
-      </CountdownProvider>
-    </div>
-    </ChallengesProvider>
+    <HomeBackground>
+      <HomeContainer>
+        <div>
+         <img src="assets/logo.svg" alt="Logo da Moveit"/>
+         <h3>Bem-vindo(a)</h3>
+         <p><img src="icons/github.svg" alt="Github"/>Faça login com seu Github para começar</p>
+         <button type="button" onClick={() => signIn()}>Entrar com Github</button>
+        </div>
+      </HomeContainer>
+    </HomeBackground>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
-
+  var obj;
+  const session = await getSession(ctx)
+  if(session){
+    await fetch(`http://localhost:3000/api/challenges?id=${session.userId}`)
+    .then(res => res.json())
+    .then(data => obj = data)
+  }
+  if(!session){
+    var obj = null;
+  }
+  
   return {
     props: {
-      level:Number(level),
-      currentExperience:Number(currentExperience),
-      challengesCompleted:Number(challengesCompleted)
+      sessions: session,
+      user: obj
     }
   }
 }

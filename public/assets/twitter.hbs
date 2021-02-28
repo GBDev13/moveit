@@ -1,0 +1,102 @@
+<style>
+  .container {
+    width: 600px;
+    height: 700px;
+    background-color: white;
+    display: flex;
+  }
+
+  .level {
+    flex: 1;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message h2 {
+    font-family: 'Segoe UI';
+    color: #2e384d;
+    font-size: 40px;
+  }
+
+  .info {
+    flex: 1;
+    height: 700px;
+  }
+
+  .levelbig {
+    font-family: 'Segoe UI';
+    color: #6348ff;
+    position: relative;
+  }
+
+  .levelbig h2 {
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 250px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .row {
+    width: 400px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 20px;
+  }
+
+  .row p {
+    font-family: 'Segoe UI';
+    font-size: 20px;
+    color: #ccc;
+  }
+
+  .row span {
+    color: #2e384d;
+    font-family: 'Segoe UI';
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  .row strong {
+    color: #6348ff;
+  }
+
+  .logo {
+    width: 400px;
+    margin-top: 100px;
+  }
+</style>
+
+<div class="container">
+  <div class="level">
+    <div class="levelbig">
+      <h2>{{level}}</h2>
+      <img src="http://localhost:3000/icons/levelup.svg" width="350">
+    </div>
+    <div class="message">
+      <h2>Eu avancei para <br> o próximo level.</h2>
+    </div>
+  </div>
+  <div class="info">
+    <div class="row">
+      <p>Desafios</p>
+      <span><strong>{{challenges}}</strong> completados</span>
+    </div>
+    <div class="row">
+      <p>Experiência</p>
+      <span><strong>{{experience}}</strong> xp</span>
+    </div>
+    <div class="logo">
+      <img src="http://localhost:3000/logo-full.svg" alt="">
+    </div>
+  </div>
+</div>

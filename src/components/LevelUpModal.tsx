@@ -1,22 +1,31 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
-import styles from '../styles/components/LevelUpModal.module.css';
+import { Overlay } from '../styles/components/LevelUpModalStyles';
+import {ReactComponent as Twitter} from '../../public/icons/twitter.svg';
 
 export function LevelUpModal() {
-  const {level, closeLevelUpModal} = useContext(ChallengesContext);
+  const {level, challengesCompleted, totalExperience, closeLevelUpModal} = useContext(ChallengesContext);
 
   return (
-    <div className={styles.overlay}>
-      <div className={styles.container}>
-        <header>{level}</header>
+    <Overlay>
+      <div className="container">
+        <div>
+          <header>{level}</header>
 
-        <strong>Parabéns</strong>
-        <p>Você alcançou um novo level.</p>
+          <strong>Parabéns</strong>
+          <p>Você alcançou um novo level.</p>
 
-        <button type="button" onClick={closeLevelUpModal}>
-          <img src="/icons/close.svg" alt="Fechar modal"/>
-        </button>
+          <button type="button" onClick={closeLevelUpModal}>
+            <img src="/icons/close.svg" alt="Fechar modal"/>
+          </button>
+        </div>
+
+        <footer>
+          <button type="button">
+            <a href={`https://twitter.com/intent/tweet?text=http://localhost:3000/api/${level}/${challengesCompleted}/${totalExperience}`}>Compartilhar no Twitter <Twitter /></a>
+            </button>
+        </footer>
       </div>
-    </div>
+    </Overlay>
   )
 }
