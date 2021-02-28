@@ -3,11 +3,16 @@ import styled from 'styled-components';
 export const Container = styled.div`
   height: 100vh;
   width:100%;
-  max-width: 992px;
+  min-width: 75vw;
   margin: 0 auto;
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
+
+  @media(max-width:850px) {
+    min-width: 100%;
+    padding: 1rem;
+  }
 
   & h2 {
     color:${({ theme }) => theme.title};
@@ -20,7 +25,7 @@ export const Container = styled.div`
     display:grid;
     grid-template-columns: .8fr 5fr 2fr 2fr;
     align-items:center;
-    gap:20px;
+    gap:10px;
     margin-bottom:1.5rem;
     color:${({ theme }) => theme.text};
     text-transform:uppercase;
@@ -28,9 +33,17 @@ export const Container = styled.div`
     font-size:.9rem;
     opacity:.5;
 
+    @media(max-width:640px) {
+      grid-template-columns: .8fr 3fr 2fr 2fr;
+    }
+
     & span:nth-of-type(2){
       padding-left:2rem;
     }
+  }
+
+  & .titulos.mobile{
+      grid-template-columns: .8fr 3fr 2fr;
   }
 
   & .grid ul{
@@ -45,13 +58,18 @@ export const Container = styled.div`
       align-items:center;
       width:100%;
       margin-bottom: .5rem;
+      padding-left:10px;
 
-      & > div {
+      
+      @media(max-width:640px) {
+        grid-template-columns: .8fr 3fr 2fr 2fr;
+      }
+
+      & > div:nth-of-type(1) {
         background:${({ theme }) => theme.card};
         padding:1rem;
         padding-left:2rem;
         width:100%;
-        margin-left:.5rem;
       }
 
       & > .info {
@@ -71,6 +89,19 @@ export const Container = styled.div`
         }
       }
 
+      & .info.double{
+        flex-direction:column;
+        grid-column:3/6;
+      }
+
+      @media(max-width:640px) {
+          & > .info {
+            & p {
+              font-size:.8rem;
+            }
+        }
+      }
+
       & > .info:last-of-type{
         border-radius:0px 5px 5px 0;
       }
@@ -84,12 +115,20 @@ export const Container = styled.div`
           height: 4rem;
           border-radius: 50%;
           margin-right: 1rem;
+          @media(max-width:640px) {
+            width:2rem;
+            height:2rem;
+            margin-right: .5rem;
+          }
         }
 
         & strong {
           color:${({ theme }) => theme.title};
           font-size: 1.2rem;
           font-weight: 600;
+          @media(max-width:640px) {
+            font-size:.9rem;
+          }
         }
 
         & p {
@@ -99,6 +138,12 @@ export const Container = styled.div`
           margin-top: 0.5rem;
           & img {
             margin-right: 0.5rem;
+          }
+          @media(max-width:640px) {
+            font-size:.7rem;
+            & img {
+              width:.5rem;
+            }
           }
         }
       }
@@ -115,6 +160,10 @@ export const Container = styled.div`
         display:flex;
         align-items:center;
         justify-content:center;
+        margin-left: -10px;
+        @media(max-width:640px) {
+          font-size:1rem;
+        }
       }
     }
   }

@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import { Container } from "../styles/pages/LeaderboardStyles";
 
 export default function Leaderboard({users}) {
-  console.log(users)
+  const mobile = window.matchMedia("(max-width: 560px)").matches;
 
   const formatedUsers = users.sort(function(a,b) {
     if(a.challengesCompleted < b.challengesCompleted) return 1;
@@ -20,11 +20,16 @@ export default function Leaderboard({users}) {
       <Container>
         <h2>Leaderboard</h2>
         <section>
-          <div className="titulos">
+          <div className={`titulos ${mobile ? 'mobile' : ''}`}>
             <span>Posição</span>
             <span>Usuário</span>
-            <span>Desafios</span>
-            <span>Experiência</span>
+            {mobile && <div><span>Desafios e Experiência</span></div>}
+            {!mobile && (
+              <>
+                <span>Desafios</span>
+                <span>Experiência</span>
+              </>
+            )}
           </div>
           <section className="grid">
             <ul>
@@ -45,13 +50,25 @@ export default function Leaderboard({users}) {
                   </div>
                 </div>
 
-                <div className="info">
+                {!mobile && (
+                  <>
+                  <div className="info">
                   <p><b>{user.challengesCompleted || 0}</b> completados</p>
                 </div>
 
                 <div className="info">
                   <p><b>{user.totalExperience || 0}</b> xp</p>
                 </div>
+                </>
+                )}
+
+                {mobile && (
+                  <div className="info double">
+                  <p><b>{user.challengesCompleted || 0}</b> completados</p>
+                  <p><b>{user.totalExperience || 0}</b> xp</p>
+                </div>
+                )}
+
               </li>
               ))}
             </ul>

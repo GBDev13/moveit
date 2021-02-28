@@ -14,6 +14,7 @@ const TogglerContainer = styled.label`
   position: absolute;
   bottom:30px;
   right:30px;
+
   &:before {
       content: '';
       width: 60px;

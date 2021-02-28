@@ -1,17 +1,23 @@
-import { Container, ContainerAside } from "../styles/components/LayoutStyles";
+import { Container, ContainerAside, Button, Overlay } from "../styles/components/LayoutStyles";
 import Link from 'next/link';
 import { signOut } from 'next-auth/client'
 import {ReactComponent as Home} from '../../public/icons/home.svg';
 import {ReactComponent as Leaderboard} from '../../public/icons/leaderboard.svg';
 import {ReactComponent as Logo} from '../../public/assets/logo_min.svg';
+import {ReactComponent as Menu} from '../../public/icons/menu.svg';
 import { useRouter } from 'next/router';
+import { useState } from "react";
 
 const Layout = ({children}) => {
+  const isMobile = window.matchMedia("(max-width: 1220px)").matches;
+  const isSmall = window.matchMedia("(max-width: 850px)").matches;
   const router = useRouter();
+  const [isMenuOpened, setIsMenuOpened] = useState(isMobile ? false : true);
+
 
  return (
-   <Container>
-     <ContainerAside>
+   <Container active={isMenuOpened}>
+     <ContainerAside style={{transform: `translateX(${isMenuOpened ? '0%' : '-100%'})`}}>
         <Logo />
         <nav>
           <ul>
@@ -29,7 +35,11 @@ const Layout = ({children}) => {
         </nav>
         <button onClick={() => signOut()}>Sair</button>
      </ContainerAside>
-     {children}
+     <Button active={isMenuOpened} onClick={() => setIsMenuOpened(!isMenuOpened)}><Menu /></Button>
+     <Overlay style={{transform: `translateX(${isMenuOpened && isSmall ? '0%' : '-100%'})`}} />
+     <main>
+      {children}
+     </main>
    </Container>
  )
 }

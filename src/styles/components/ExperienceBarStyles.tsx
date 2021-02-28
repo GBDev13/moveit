@@ -5,6 +5,10 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
 
+  @media(max-width:850px){
+    margin-bottom:7rem;
+  }
+
   & span {
     font-size: 1rem;
     display:flex;

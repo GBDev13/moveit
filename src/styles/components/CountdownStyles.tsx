@@ -20,6 +20,13 @@ export const Container = styled.div`
     border-radius: 5px;
     font-size: 8.5rem;
     text-align: center;
+
+    @media(max-width:450px){
+      font-size: 6.5rem;
+    }
+    @media(max-width:370px){
+      font-size: 4.5rem;
+    }
   }
 
   & > div span {
@@ -37,6 +44,9 @@ export const Container = styled.div`
   & > span {
     font-size: 6.25rem;
     margin: 0 0.5rem;
+    @media(max-width:370px){
+      font-size: 3rem;
+    }
   }
 
 `;

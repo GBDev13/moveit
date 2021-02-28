@@ -15,11 +15,11 @@ export const ChallengeBoxContainer = styled.div`
   text-align: center;
 
 
-
   & .challengeNotActive {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding:5rem;
 
     & strong {
       font-size: 1.5rem;
@@ -77,8 +77,17 @@ export const ChallengeBoxContainer = styled.div`
       margin: 1.5rem 0 1rem;
     }
 
-    & main p {
+    &  p {
       line-height: 1.5;
+      @media(max-width: 850px){
+        margin:1rem 0;
+      }
+    }
+
+    & img {
+      @media(max-width: 850px){
+        margin-top:2rem;
+      }
     }
   }
 

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface LayoutProps {
+  active:boolean;
+}
+
 export const ContainerAside = styled.aside`
   width:100%;
   max-width:7rem;
@@ -13,6 +17,9 @@ export const ContainerAside = styled.aside`
   width:100%;
   max-width:7rem;
   transition: all 0.50s linear;
+  transition: transform .3s;
+  position:absolute;
+  z-index:111;
 
   & > svg path{
     fill:${({ theme }) => theme.blueOne};
@@ -69,8 +76,62 @@ export const ContainerAside = styled.aside`
   }
 
 `;
-export const Container = styled.main`
+export const Container = styled.div<LayoutProps>`
   width:100vw;
   height:100vh;
   display:flex;
+
+  & > main {
+    margin:0 auto;
+    padding-left:${(props) => props.active ? '7rem' : '0'};
+    transition: .5s;
+
+    @media(max-width: 850px){
+      padding-left:0;
+      width:100%;
+      overflow-y:scroll;
+    }
+      
+  }
+`;
+
+export const Button = styled.button<LayoutProps>`
+  position:absolute;
+  bottom: 30px;
+  left: ${(props) => props.active ? '138px' : '30px'};
+  transition:.3s;
+  width:40px;
+  height:40px;
+  background:none;
+  border:none;
+  z-index:111;
+
+  &:focus{
+    outline:none;
+  }
+
+  & svg {
+    width:40px;
+    height:40px;
+    & path {
+      fill:${(props) => props.active ? props.theme.blueOne : props.theme.text};
+      transition:.5s;
+    }
+
+    &:hover {
+      & path {
+        fill:${({ theme }) => theme.blueOne};
+      }
+    }
+  }
+`;
+
+export const Overlay = styled.div`
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:${({ theme }) => theme.modal};
+  z-index:110;
 `;

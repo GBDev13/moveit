@@ -5,9 +5,18 @@ const Container = styled.div`
   max-width: 992px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
-
   display: flex;
   flex-direction: column;
+
+  @media(max-width:850px){
+    max-width: 1200px;
+    margin-top:1rem;
+  }
+
+  
+  @media(max-width:370px){
+    padding: 1rem;
+  }
 
   & section {
     flex: 1;
@@ -16,6 +25,14 @@ const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     gap: 6.25rem;
     align-content: center;
+
+    @media(max-width:850px){
+      grid-template-columns: 1fr;
+
+      & > div:nth-of-type(2){
+        margin-bottom:5rem;
+      }
+    }
   }
 
 `;
