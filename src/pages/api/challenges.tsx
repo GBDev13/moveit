@@ -26,7 +26,7 @@ async function connectToDatabase(uri: string) {
 export default async (request:NowRequest, response:NowResponse) => {
   const { id, level, challengesCompleted, currentExperience, totalExperience } = request.body;
 
-  const db = await connectToDatabase(process.env.DATABASE_URL);
+  const db = await connectToDatabase(process.env.NEXT_PUBLIC_DATABASE_URL);
 
   const collection = db.collection('users');
 
