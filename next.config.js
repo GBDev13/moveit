@@ -3,3 +3,8 @@ module.exports = {
     ignoreBuildErrors: true,
   },
 };
+module.exports = {
+  serverRuntimeConfig: {
+    PROJECT_ROOT: __dirname,
+  },
+};
