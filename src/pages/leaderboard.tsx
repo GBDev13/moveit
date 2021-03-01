@@ -1,16 +1,19 @@
 import { GetServerSideProps } from "next";
-import { getSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import { Container } from "../styles/pages/LeaderboardStyles";
 
-export default function Leaderboard({users, session}) {
+export default function Leaderboard({users}) {
   const mobile = window.matchMedia("(max-width: 560px)").matches;
+
+  
+  const [ session, loading ] = useSession()
 
   const router = useRouter();
 
-  if (typeof window !== 'undefined' && !session){
+  if (typeof window !== 'undefined' && !loading && !session){
     router.push("/");
   }
 
@@ -106,16 +109,5 @@ export const getStaticProps: GetServerSideProps = async () => {
       users: obj
     },
     revalidate: 60,
-  }
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  const session = await getSession(ctx)
- 
-  return {
-    props: {
-      sessions: session,
-    }
   }
 }
