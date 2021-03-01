@@ -63,7 +63,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   var obj;
   const session = await getSession(ctx)
   if(session){
-    await fetch(`http://localhost:3000/api/challenges?id=${session.userId}`)
+    await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/challenges?id=${session.userId}`)
     .then(res => res.json())
     .then(data => obj = data)
   }

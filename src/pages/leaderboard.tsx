@@ -82,7 +82,7 @@ export default function Leaderboard({users}) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   var obj;
-  await fetch(`http://localhost:3000/api/challenges?all=1`)
+  await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/challenges?all=1`)
   .then(res => res.json())
   .then(data => obj = data)
   
