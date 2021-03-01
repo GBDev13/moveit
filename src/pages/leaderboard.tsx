@@ -1,10 +1,21 @@
 import { GetServerSideProps } from "next";
+import { useSession } from "next-auth/client";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import { Container } from "../styles/pages/LeaderboardStyles";
 
 export default function Leaderboard({users}) {
   const mobile = window.matchMedia("(max-width: 560px)").matches;
+
+  
+  const [ session, loading ] = useSession()
+
+  const router = useRouter();
+
+  if (typeof window !== 'undefined' && !loading && !session){
+    router.push("/");
+  }
 
   const userWithChallenges = users.filter(user => {
     if(user.challengesCompleted){
@@ -86,3 +97,17 @@ export default function Leaderboard({users}) {
   )
 }
 
+export const getStaticProps: GetServerSideProps = async () => {
+
+  var obj;
+  await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/challenges?all=1`)
+  .then(res => res.json())
+  .then(data => obj = data)
+  
+  return {
+    props: {
+      users: obj
+    },
+    revalidate: 60,
+  }
+}

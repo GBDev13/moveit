@@ -15,6 +15,7 @@ const Layout = ({children}) => {
   const router = useRouter();
   const [isMenuOpened, setIsMenuOpened] = useState(isMobile ? false : true);
 
+
  return (
    <Container active={isMenuOpened}>
      <ContainerAside style={{transform: `translateX(${isMenuOpened ? '0%' : '-100%'})`}}>
@@ -48,17 +49,21 @@ export default Layout;
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
+  var obj;
   const session = await getSession(ctx)
-  const { res } =  ctx;
-  
-  if(!session) {
-    res.writeHead(301, { location: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}` } );
-    res.end();
+  if(session){
+    await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/challenges?id=${session.userId}`)
+    .then(res => res.json())
+    .then(data => obj = data)
   }
-
+  if(!session){
+    var obj = null;
+  }
+  
   return {
     props: {
-      sessions: session
+      sessions: session,
+      user: obj
     }
   }
 }
