@@ -10,8 +10,7 @@ async function connectToDatabase(uri: string) {
   }
 
   const client = await MongoClient.connect(uri, {
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
+    useNewUrlParser:true
   });
 
   const dbName = url.parse(uri).pathname.substr(1);
