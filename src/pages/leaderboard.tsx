@@ -7,7 +7,6 @@ import { Container } from "../styles/pages/LeaderboardStyles";
 
 export default function Leaderboard({users}) {
   const mobile = window.matchMedia("(max-width: 560px)").matches;
-
   
   const [ session, loading ] = useSession()
 
