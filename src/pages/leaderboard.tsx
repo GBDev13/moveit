@@ -6,11 +6,20 @@ import { Container } from "../styles/pages/LeaderboardStyles";
 export default function Leaderboard({users}) {
   const mobile = window.matchMedia("(max-width: 560px)").matches;
 
-  const formatedUsers = users.sort(function(a,b) {
-    if(a.challengesCompleted < b.challengesCompleted) return 1;
-    if (a.challengesCompleted > b.challengesCompleted) return -1;
+  const userWithChallenges = users.filter(user => {
+    if(user.challengesCompleted){
+      return user
+    }
+  })
+  const formatedUsers = userWithChallenges.sort(function(a,b) {
+    if (a.challengesCompleted && b.challengesCompleted) {
+      if(a.challengesCompleted < b.challengesCompleted) return 1;
+      if (a.challengesCompleted > b.challengesCompleted) return -1;
+    } else return 0;
     return 0;
   })
+
+  console.log(formatedUsers)
 
   return (
     <Layout>
