@@ -10,7 +10,7 @@ export default async function(request: NextApiRequest, response: NextApiResponse
 
     // const dir = path.resolve('./public', 'twitter.hbs')
     // const img = fs.readFileSync(dir).toString('utf-8')
-    const img = readFileSync(join(__dirname, 'public', 'twitter.hbs'), 'utf8')
+    const img = readFileSync(join(__dirname, './public', 'twitter.hbs'), 'utf8')
     const handle = handlebars.compile(img)
     const html = handle({ level, challenges, experience })
     const image = await nodeHtmlToImage({
