@@ -80,6 +80,7 @@ export const Container = styled.div<LayoutProps>`
   width:100vw;
   height:100vh;
   display:flex;
+  overflow-y:scroll;
 
   & > main {
     margin:0 auto;
@@ -89,7 +90,6 @@ export const Container = styled.div<LayoutProps>`
     @media(max-width: 850px){
       padding-left:0;
       width:100%;
-      overflow-y:scroll;
     }
       
   }

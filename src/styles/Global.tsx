@@ -8,13 +8,13 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
     box-sizing: border-box;
 
     ::-webkit-scrollbar {
-     width: 5px;
+      width: 5px;
       height: 5px;
+      transition:.3s;
     }
     ::-webkit-scrollbar-thumb {
       background: ${({ theme }) => theme.blueOne};
       border-radius: 10px;
-      transition:.3s;
     }
     ::-webkit-scrollbar-thumb:hover{
       background: ${({ theme }) => theme.loading};
