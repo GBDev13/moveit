@@ -53,4 +53,4 @@ $ yarn start
 ### Link para o projeto online
 
 
-🚧[MoveIt - (Em Atualizações)](http://github.com)🚧
+🚧[MoveIt - (Em Atualizações)](https://moveit-eight-omega.vercel.app)🚧
