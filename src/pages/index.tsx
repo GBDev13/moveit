@@ -7,14 +7,9 @@ import {HomeBackground, HomeContainer } from '../styles/pages/HomeStyles';
 export default function Home({sessions}) {
   const router = useRouter();
   
-  if (typeof window !== 'undefined' && sessions){
-    router.push('/challenges')
-  }
-
-  console.log(process.env.NEXT_PUBLIC_DATABASE_URL)
-  console.log(process.env.NEXT_PUBLIC_GITHUB_ID)
-  console.log(process.env.NEXT_PUBLIC_GITHUB_SECRET)
-  console.log(process.env.NEXT_PUBLIC_NEXTAUTH_URL)
+  // if (typeof window !== 'undefined' && sessions){
+  //   router.push('/challenges')
+  // }
 
   return (
     <HomeBackground>
@@ -45,7 +40,14 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if(!session){
     var obj = null;
   }
+
+  const { res } =  ctx;
   
+  if(session) {
+    res.writeHead(301, { location: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/challenges` } );
+    res.end();
+  }
+
   return {
     props: {
       sessions: session,
