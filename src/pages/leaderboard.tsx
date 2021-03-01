@@ -88,7 +88,7 @@ export default function Leaderboard({users}) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getStaticProps: GetServerSideProps = async () => {
 
   var obj;
   await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/challenges?all=1`)
@@ -98,6 +98,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return {
     props: {
       users: obj
-    }
+    },
+    revalidate: 60,
   }
 }
