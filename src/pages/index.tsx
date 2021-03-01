@@ -1,15 +1,9 @@
 import { GetServerSideProps } from 'next';
-import { getSession, signIn, signOut, useSession } from 'next-auth/client'
+import { getSession, signIn} from 'next-auth/client'
 import Head from 'next/head';
-import {useRouter} from 'next/router'
 import {HomeBackground, HomeContainer } from '../styles/pages/HomeStyles';
 
-export default function Home({sessions}) {
-  const router = useRouter();
-  
-  // if (typeof window !== 'undefined' && sessions){
-  //   router.push('/challenges')
-  // }
+export default function Home() {
 
   return (
     <HomeBackground>
@@ -30,17 +24,7 @@ export default function Home({sessions}) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  var obj;
   const session = await getSession(ctx)
-  if(session){
-    await fetch(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/challenges?id=${session.userId}`)
-    .then(res => res.json())
-    .then(data => obj = data)
-  }
-  if(!session){
-    var obj = null;
-  }
-
   const { res } =  ctx;
   
   if(session) {
@@ -50,8 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   return {
     props: {
-      sessions: session,
-      user: obj
+      sessions: session
     }
   }
 }
