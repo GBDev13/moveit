@@ -10,7 +10,6 @@ import { CountdownProvider } from "../contexts/CountdownContext";
 import { GetServerSideProps } from "next";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { getSession } from "next-auth/client";
-import {useRouter} from 'next/router'
 import Layout from "../components/Layout";
 import { Container } from "../styles/pages/HomeStyles";
 
@@ -23,11 +22,6 @@ interface HomeProps {
 }
 
 export default function Challenges(props:HomeProps) {
-  const router = useRouter();
-
-  if (typeof window !== 'undefined' && !props.sessions){
-    router.push("/");
-  }
 
   if (props.sessions) return (
     <ChallengesProvider id={props.sessions.userId} level={props.user.level} currentExperience={props.user.currentExperience} challengesCompleted={props.user.challengesCompleted} totalExperience={props.user.totalExperience}>
