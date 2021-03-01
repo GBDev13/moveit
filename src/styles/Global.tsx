@@ -6,6 +6,23 @@ export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    ::-webkit-scrollbar {
+     width: 5px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.blueOne};
+      border-radius: 10px;
+      transition:.3s;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+      background: ${({ theme }) => theme.loading};
+    }
+    ::-webkit-scrollbar-track{
+      background: ${({ theme }) => theme.input};
+      border-radius: 10px;
+    }
   }
 
   body {
