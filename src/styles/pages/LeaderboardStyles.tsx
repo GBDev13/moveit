@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
+  overflow-y:scroll;
 
   @media(max-width:850px) {
     min-width: 100%;
