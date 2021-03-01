@@ -51,7 +51,18 @@ const HomeContainer = styled.div`
   flex:1;
   align-items:center;
   justify-content:flex-end;
-  margin:25rem;
+  margin:17rem;
+
+  @media(max-width:1300px){
+    margin:12rem;
+  }
+  @media(max-width:1300px){
+    margin:0;
+    justify-content:center;
+    & h3{
+      text-align:center;
+    }
+  }
 
   & > div > img{
     margin-bottom:7rem
@@ -85,6 +96,24 @@ const HomeContainer = styled.div`
 
     &:hover {
       color:#fff;
+    }
+  }
+
+  
+  @media(max-width:400px){
+    & > div{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+    & > div > img{
+      width:16rem;
+      margin:0 auto;
+      margin-bottom:5rem
+    }
+    & p {
+      max-width:260px;
     }
   }
 `;
