@@ -1,10 +1,18 @@
 import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/client";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import { Container } from "../styles/pages/LeaderboardStyles";
 
-export default function Leaderboard({users}) {
+export default function Leaderboard({users, session}) {
   const mobile = window.matchMedia("(max-width: 560px)").matches;
+
+  const router = useRouter();
+
+  if (typeof window !== 'undefined' && !session){
+    router.push("/");
+  }
 
   const userWithChallenges = users.filter(user => {
     if(user.challengesCompleted){
@@ -18,8 +26,6 @@ export default function Leaderboard({users}) {
     } else return 0;
     return 0;
   })
-
-  console.log(formatedUsers)
 
   return (
     <Layout>
@@ -100,5 +106,16 @@ export const getStaticProps: GetServerSideProps = async () => {
       users: obj
     },
     revalidate: 60,
+  }
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+  const session = await getSession(ctx)
+ 
+  return {
+    props: {
+      sessions: session,
+    }
   }
 }
