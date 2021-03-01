@@ -14,6 +14,18 @@ export default NextAuth({
     session: async (session, user) => {
       session.userId = user.id;    
       return Promise.resolve(session);
+    },
+    signIn: async (_user, _account, profile) => {
+      userData = {
+        username: profile.login,
+        githubProfile: `https://github.com/${profile.login}`,
+        level: 1,
+        totalExperience:0,
+        challengesCompleted:0,
+        currentExperience:0,
+      };
+
+      return Promise.resolve(true);
     }
   },
   
