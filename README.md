@@ -13,7 +13,7 @@
 * Sistema de níveis, para gerar a gamificação comentada acima;
 * Leaderboard, mostrando os usuários com a maior quantidade de desafios concluídos em conta;
 * Design moderno e responsivo, contando com o tema dark.
-* Compartilhamento pelo twitter ao subir de nível, gerando automaticamente uma imagem customizada para cada usuário!
+* Compartilhamento pelo twitter ao subir de nível, gerando automaticamente uma imagem customizada para cada usuário! (🚧 Em testes 🚧)
 
 ![mockups](https://user-images.githubusercontent.com/71772559/109436203-39e61980-79fd-11eb-9e22-33efefa0ed38.png)
 
@@ -24,6 +24,7 @@
 * Next Auth
 * TypeScript
 * MongoDb
+* Handlebars
 
 ![ezgif com-optimize (2)](https://user-images.githubusercontent.com/71772559/109437018-7a479680-7a01-11eb-9f7b-23cd97c875e6.gif)
 
@@ -31,7 +32,7 @@
 ## Instalação
 ```
 # Abra um terminal e copie este repositório com o comando
-$ git clone https://github.com/tarcisiodelmondes/moveIt.git
+$ git clone https://github.com/GBDev13/moveit.git
 ```
 
 ```
