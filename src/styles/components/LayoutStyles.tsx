@@ -35,14 +35,22 @@ export const ContainerAside = styled.aside`
       align-items:center;
       & svg path{
         stroke:${({ theme }) => theme.text};
-        transition:1s;
+        transition:.5s;
       }
       & svg {
         &:hover path{
           stroke:${({ theme }) => theme.blueOne};
         }
       }
-      
+      &:last-child svg {
+        width:32px;
+        fill:${({ theme }) => theme.text};
+        transition:.5s;
+        opacity:.5;
+        &:hover {
+          fill:${({ theme }) => theme.blueOne};
+        }
+      }
 
       &.active {
         &:before{
@@ -59,6 +67,10 @@ export const ContainerAside = styled.aside`
           stroke:${({ theme }) => theme.blueOne};
         }
         & svg g {
+          opacity:1;
+        }
+        &:last-child svg {
+          fill:${({ theme }) => theme.blueOne};
           opacity:1;
         }
       }

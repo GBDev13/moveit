@@ -2,7 +2,6 @@ import { Provider } from 'next-auth/client';
 import '../styles/global.css';
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../styles/Global';
-import Head from 'next/head';
 import { useDarkMode } from '../Hooks/useDarkmode';
 import {lightTheme, darkTheme} from '../styles/Theme';
 import Toggle from '../components/Toggler';

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getSession, signOut } from 'next-auth/client'
 import {ReactComponent as Home} from '../../public/icons/home.svg';
 import {ReactComponent as Leaderboard} from '../../public/icons/leaderboard.svg';
+import {ReactComponent as UserProfile} from '../../public/icons/profileuser.svg';
 import {ReactComponent as Logo} from '../../public/assets/logo_min.svg';
 import {ReactComponent as Menu} from '../../public/icons/menu.svg';
 import { useRouter } from 'next/router';
@@ -30,6 +31,11 @@ const Layout = ({children}) => {
             <li className={router.pathname === "/leaderboard" ? "active" : ""}>
               <Link href="/leaderboard">
                 <a><Leaderboard /></a>
+              </Link>
+            </li>
+            <li className={router.pathname === "/profile" ? "active" : ""}>
+              <Link href="/profile">
+                <a><UserProfile /></a>
               </Link>
             </li>
           </ul>

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "badgelevel5",
+    "description": "Conquista alcançada ao chegar no nível 5",
+    "image": "/icons/badges/badgelevel5.svg"
+  },
+  {
+    "id": "badgelevel10",
+    "description": "Conquista alcançada ao chegar no nível 10",
+    "image": "/icons/badges/badgelevel10.svg"
+  },
+  {
+    "id": "badgelevel30",
+    "description": "Conquista alcançada ao chegar no nível 30",
+    "image": "/icons/badges/badgelevel30.svg"
+  },
+  {
+    "id": "badgelevel50",
+    "description": "Conquista alcançada ao chegar no nível 50",
+    "image": "/icons/badges/badgelevel50.svg"
+  },
+  {
+    "id": "badgelevel100",
+    "description": "Conquista alcançada ao chegar no nível 100",
+    "image": "/icons/badges/badgelevel100.svg"
+  },
+  {
+    "id": "badgechallenges5",
+    "description": "Conquista alcançada ao concluir 5 desafios",
+    "image": "/icons/badges/badgechallenges5.svg"
+  },
+  {
+    "id": "badgechallenges10",
+    "description": "Conquista alcançada ao concluir 10 desafios",
+    "image": "/icons/badges/badgechallenges10.svg"
+  },
+  {
+    "id": "badgechallenges30",
+    "description": "Conquista alcançada ao concluir 30 desafios",
+    "image": "/icons/badges/badgechallenges30.svg"
+  },
+  {
+    "id": "badgechallenges50",
+    "description": "Conquista alcançada ao concluir 50 desafios",
+    "image": "/icons/badges/badgechallenges50.svg"
+  },
+  {
+    "id": "badgechallenges100",
+    "description": "Conquista alcançada ao concluir 100 desafios",
+    "image": "/icons/badges/badgechallenges100.svg"
+  },
+  {
+    "id": "badgeexperience5000",
+    "description": "Conquista alcançada ao acumular o total de 5000 de experiência",
+    "image": "/icons/badges/badgeexperience5000.svg"
+  },
+  {
+    "id": "badgeexperience10000",
+    "description": "Conquista alcançada ao acumular o total de 10000 de experiência",
+    "image": "/icons/badges/badgeexperience10000.svg"
+  },
+  {
+    "id": "badgeexperience20000",
+    "description": "Conquista alcançada ao acumular o total de 20000 de experiência",
+    "image": "/icons/badges/badgeexperience20000.svg"
+  },
+  {
+    "id": "badgecicle3",
+    "description": "Conquista alcançada ao completar 3 ciclos sem reiniciar a janela",
+    "image": "/icons/badges/badgecicle3.svg"
+  },
+  {
+    "id": "badgecicle5",
+    "description": "Conquista alcançada ao completar 5 ciclos sem reiniciar a janela",
+    "image": "/icons/badges/badgecicle5.svg"
+  }
+]

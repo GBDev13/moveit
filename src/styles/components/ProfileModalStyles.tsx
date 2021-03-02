@@ -11,8 +11,8 @@ export const Overlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index:300;
-
+  z-index:200;
+  animation:fade-in .5s;
 
   & .container > div{
     background: ${({ theme }) => theme.card};
@@ -24,6 +24,12 @@ export const Overlay = styled.div`
     text-align: center;
     position: relative;
 
+    &:hover{
+      & header img {
+        transform:scale(1.2);
+      }
+    }
+
     & header {
       font-size: 8.75rem;
       font-weight: 600;
@@ -33,14 +39,10 @@ export const Overlay = styled.div`
       text-shadow: 0px 10px 16px rgba(89, 101, 224, 0.3);
 
       & img{
-        width:180px;
-        height:180px
+        width:130px;
+        height:130px;
+        transition:.5s;
       }
-    }
-
-    & strong {
-      font-size: 2.25rem;
-      color: ${({ theme }) => theme.title};
     }
 
     & p {

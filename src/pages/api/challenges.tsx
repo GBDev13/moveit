@@ -86,4 +86,22 @@ export default async (request:NowRequest, response:NowResponse) => {
       return response.status(400).json({message:'Error'})
     }
   }
+
+  else if(request.method === "PUT") {
+    const { id, badge_id, description, image } = request.body;
+
+    if(id){
+      var myquery = { "_id": ObjectID(id) };
+
+      const user = await collection.updateOne(myquery, {$push: {achievements: {
+        badge_id,
+        description,
+        image: image
+      }}})
+
+      return response.status(200).json(user);
+    } else {
+      return response.status(400).json({message:'Error'})
+    }
+  }
 }

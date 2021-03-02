@@ -14,12 +14,34 @@ import {useRouter} from 'next/router'
 import Layout from "../components/Layout";
 import { Container } from "../styles/pages/HomeStyles";
 
+interface Badge {
+  badge_id:string;
+  description:string;
+  image:string;
+}
+
+interface Session{
+  userId:string;
+}
+
+interface User{
+  id: string;
+  name:string;
+  image:string;
+  challengesCompleted:number;
+  level:number;
+  currentExperience:number;
+  totalExperience:number;
+  achievements:Badge[],
+  badges: object;
+}
+
 interface HomeProps {
   level: number;
   currentExperience: number;
   challengesCompleted: number;
-  sessions: object;
-  user: object;
+  sessions: Session;
+  user: User;
 }
 
 export default function Challenges(props:HomeProps) {
@@ -30,7 +52,7 @@ export default function Challenges(props:HomeProps) {
   }
 
   if (props.sessions) return (
-    <ChallengesProvider id={props.sessions.userId} level={props.user.level} currentExperience={props.user.currentExperience} challengesCompleted={props.user.challengesCompleted} totalExperience={props.user.totalExperience}>
+    <ChallengesProvider id={props.sessions.userId} user_badges={props.user.achievements} level={props.user.level} currentExperience={props.user.currentExperience} challengesCompleted={props.user.challengesCompleted} totalExperience={props.user.totalExperience}>
     <Layout>
       <Container>
         <Head>
@@ -42,7 +64,7 @@ export default function Challenges(props:HomeProps) {
         <CountdownProvider>
           <section>
             <div>
-              <Profile user={props.user} sessions={props.sessions}/>
+              <Profile sessions={props.sessions}/>
               <CompletedChallenges />
               <Countdown />
             </div>

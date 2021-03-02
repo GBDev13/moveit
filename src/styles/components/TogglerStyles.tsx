@@ -3,6 +3,8 @@ import styled from "styled-components"
 const TogglerContainer = styled.label`
   &::before{
     background:${({ theme }) => theme.input};
+    -webkit-box-shadow: 8px 9px 12px -5px rgba(0,0,0,0.2); 
+    box-shadow: 8px 9px 12px -5px rgba(0,0,0,0.2); 
   }
 
   & input + div span{
