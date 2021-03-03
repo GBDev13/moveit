@@ -44,12 +44,13 @@
 
 ## 🛠️ Tecnologias/Ferramentas ultilizadas
 
-* React
-* Next.js
-* Next Auth
-* TypeScript
-* MongoDb
-* Handlebars
+* [React](https://pt-br.reactjs.org/E)
+* [Next.js](https://nextjs.org/)
+* [Next Auth](https://next-auth.js.org/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [MongoDb](https://www.mongodb.com/)
+* [Styled Components](https://styled-components.com/)
+* [Handlebars](https://handlebarsjs.com/)
 
 ![ezgif com-optimize (2)](https://user-images.githubusercontent.com/71772559/109437018-7a479680-7a01-11eb-9f7b-23cd97c875e6.gif)
 
