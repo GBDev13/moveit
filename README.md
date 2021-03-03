@@ -6,11 +6,15 @@
 
 * O Moveit foi o App desenvolvido durante a Next Level Week #04 da Rocketseat! Ultilizando a técnica de pomodoro com um toque de gamificação, deixando suas tarefas mais produtivas e mantendo o bem-estar/saúde.
 
+&nbsp;
+
 ## Funcionalidades iniciais do projeto
 
 * Pomodoro interativo, a cada 25 minutos ele gera uma tarefa nova, recompençando com pontos assim que completada;
 * Sistema de níveis, para gerar a gamificação comentada acima;
 * Design moderno e clean;
+
+&nbsp;
 
 ## Funcionalidades desenvolvidas por mim, para levar o projeto ao próximo nível
 * Página home, possibilitando o login;
@@ -24,13 +28,19 @@
 
 ![mockups](https://user-images.githubusercontent.com/71772559/109436203-39e61980-79fd-11eb-9e22-33efefa0ed38.png)
 
+&nbsp;
+
 ## Sistema de conquistas funcionando
 
 ![Feature Perfil](https://user-images.githubusercontent.com/71772559/109734003-03480480-7b9f-11eb-8835-891c6a298516.gif)
 
+&nbsp;
+
 ## Design desenvolvido para os ícones de cada conquista
 
 ![iconesconquista](https://user-images.githubusercontent.com/71772559/109735822-245e2480-7ba2-11eb-8b66-e945b087f8e6.png)
+
+&nbsp;
 
 ## Tecnologias/Ferramentas ultilizadas
 
@@ -43,6 +53,7 @@
 
 ![ezgif com-optimize (2)](https://user-images.githubusercontent.com/71772559/109437018-7a479680-7a01-11eb-9f7b-23cd97c875e6.gif)
 
+&nbsp;
 
 ## Instalação
 ```
@@ -65,6 +76,7 @@ $ yarn install
 $ yarn start
 ```
 
+&nbsp;
 
 ### Link para o projeto online
 
