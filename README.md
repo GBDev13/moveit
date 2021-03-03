@@ -28,6 +28,10 @@
 
 ![Feature Perfil](https://user-images.githubusercontent.com/71772559/109734003-03480480-7b9f-11eb-8835-891c6a298516.gif)
 
+## Design desenvolvido para os ícones de cada conquista
+
+![iconesconquista](https://user-images.githubusercontent.com/71772559/109735822-245e2480-7ba2-11eb-8b66-e945b087f8e6.png)
+
 ## Tecnologias/Ferramentas ultilizadas
 
 * React
