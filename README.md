@@ -82,3 +82,16 @@ $ yarn start
 
 
 🚧[MoveIt - (Em Atualizações)](https://moveit-eight-omega.vercel.app)🚧
+
+&nbsp;
+
+## 📝 Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](LICENSE.md) para detalhes.
+
+
+---
+
+<p align="center">Feito com 💙 por GBDev13</p>
+
+
