@@ -6,16 +6,27 @@
 
 * O Moveit foi o App desenvolvido durante a Next Level Week #04 da Rocketseat! Ultilizando a técnica de pomodoro com um toque de gamificação, deixando suas tarefas mais produtivas e mantendo o bem-estar/saúde.
 
-## Funcionalidades do projeto
+## Funcionalidades iniciais do projeto
 
 * Pomodoro interativo, a cada 25 minutos ele gera uma tarefa nova, recompençando com pontos assim que completada;
-* Login com o Github, puxando suas informações e armazenando as mesmas no MongoDb;
 * Sistema de níveis, para gerar a gamificação comentada acima;
+* Design moderno e clean;
+
+## Funcionalidades desenvolvidas por mim, para levar o projeto ao próximo nível
+* Página home, possibilitando o login;
+* Login com o Github, puxando suas informações e armazenando as mesmas no MongoDb;
 * Leaderboard, mostrando os usuários com a maior quantidade de desafios concluídos em conta;
-* Design moderno e responsivo, contando com o tema dark.
+* Design responsivo e contanto com tema dark (tranformado todos os códigos css em styled-components);
+* Sistema de conquistas, que são armazenadas no MongoDb;
+* Página de perfil do usuário, mostrando alguns dados sobre a conta + as conquistas que o mesmo possui;
+* SEO da aplicação;
 * Compartilhamento pelo twitter ao subir de nível, gerando automaticamente uma imagem customizada para cada usuário! (🚧 Em testes 🚧)
 
 ![mockups](https://user-images.githubusercontent.com/71772559/109436203-39e61980-79fd-11eb-9e22-33efefa0ed38.png)
+
+## Sistema de conquistas funcionando
+
+![Feature Perfil](https://user-images.githubusercontent.com/71772559/109734003-03480480-7b9f-11eb-8835-891c6a298516.gif)
 
 ## Tecnologias/Ferramentas ultilizadas
 
