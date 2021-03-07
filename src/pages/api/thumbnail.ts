@@ -50,6 +50,7 @@ export default async (
       res.setHeader('Content-Type', 'text/html')
       res.end(`<h1>Internal Error</h1><p>${e}</p>`)
       console.error(e)
+      console.log(isDev)
     }
   }
   if(!isImage)
@@ -72,26 +73,15 @@ export default async (
   
         return
       }
-  
-      // const file = await getScreenshot(html, isDev)
-  
-      // res.statusCode = 200
-  
-      // res.setHeader('Content-Type', `image/png`)
-      // res.setHeader(
-      //   'Cache-Control',
-      //   'public, immutable, no-transform, s-maxage=31536000, max-age=31536000'
-      // )
-  
-      // res.end(file)
-  
+      
       res.setHeader('Content-Type', 'text/html')
       return res.end(html)
     } catch (e) {
       res.statusCode = 500
       res.setHeader('Content-Type', 'text/html')
       res.end(`<h1>Internal Error</h1><p>${e}</p>`)
-      console.error(e, isDev)
+      console.error(e)
+      console.log(isDev)
     }
   }
 }
