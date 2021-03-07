@@ -7,7 +7,7 @@ export function LevelUpModal() {
   const {level, challengesCompleted, totalExperience, closeLevelUpModal} = useContext(ChallengesContext);
 
   console.log(level, challengesCompleted, totalExperience)
-  const twitterUrl = encodeURI(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/thumbnail.png?level=${String(level)}&challenges=${String(challengesCompleted)}&experience=${String(totalExperience)}`);
+  const twitterUrl = encodeURIComponent(`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/thumbnail.png?level=${String(level)}&challenges=${String(challengesCompleted)}&experience=${String(totalExperience)}`);
 
   console.log(twitterUrl)
   return (
