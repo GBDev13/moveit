@@ -29,7 +29,7 @@ export default async (
       return
     }
 
-    const file = await getScreenshot(html, isDev)
+    // const file = await getScreenshot(html, isDev)
 
     // res.statusCode = 200
 
