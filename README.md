@@ -21,7 +21,7 @@
 * Página 404;
 * Login com o Github, puxando suas informações e armazenando as mesmas no MongoDb;
 * Leaderboard, mostrando os usuários com a maior quantidade de desafios concluídos em conta;
-* Design responsivo e contanto com tema dark (tranformado todos os códigos css em styled-components);
+* Design responsivo e contando com tema dark (tranformado todos os códigos css em styled-components);
 * Sistema de conquistas, que são armazenadas no MongoDb;
 * Página de perfil do usuário, mostrando alguns dados sobre a conta + as conquistas que o mesmo possui;
 * SEO da aplicação;
