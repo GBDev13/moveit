@@ -110,3 +110,7 @@
 //     revalidate: 60,
 //   }
 // }
+
+export default function Leaderboard() {
+  return <div>challenges</div>
+}
