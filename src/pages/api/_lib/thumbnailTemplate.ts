@@ -15,6 +15,13 @@ export function getHtml({
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Vamos comemorar! Eu subi para o nível ${level}" />
+      <meta name="twitter:description" content="Consegui um novo nível depois de completar ${challenges} desafios no Move.it! Acumulando ${experience} xp!" />
+      <meta name="og:description" content="Consegui um novo nível depois de completar ${challenges} desafios no Move.it! Acumulando ${experience} xp!" />
+      <meta name="og:title" content="Vamos comemorar! Eu subi para o nível ${level}" />
+      <meta name="twitter:image" content="${`https://youtube-serverless-thumb-generator-rho.vercel.app/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
+      <meta name="og:image" content="${`https://youtube-serverless-thumb-generator-rho.vercel.app/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
       <link rel="stylesheet" href="./style.css" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
@@ -38,9 +45,13 @@ export function getHtml({
           align-items: center;
           justify-content: center;
           font-family: Inter, Helvetica, sans-serif;
-          max-width: 1200px;
-          max-height: 600px;
           box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1;
+          width: 100%;
+          height: 100vh;
         }
         
         main {
@@ -124,7 +135,7 @@ export function getHtml({
               <p><span>${experience}</span> xp</p>
             </li>
           </ul>
-          <img src="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/logo-full.svg" alt="Logotipo Move.it" />
+          <a href="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}"><img src="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/logo-full.svg" alt="Logotipo Move.it" /></a>
         </section>
       </main>
     </body>
