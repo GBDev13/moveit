@@ -6,7 +6,6 @@ import { useDarkMode } from '../Hooks/useDarkmode';
 import {lightTheme, darkTheme} from '../styles/Theme';
 import Toggle from '../components/Toggler';
 import { useRouter } from 'next/router';
-import NProgress from "nprogress"
 import { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 
