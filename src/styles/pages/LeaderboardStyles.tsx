@@ -50,6 +50,7 @@ export const Container = styled.div`
     width:100%;
     display:flex;
     flex-direction:column;
+    margin-bottom:5rem;
 
     & li{
       display:grid;
