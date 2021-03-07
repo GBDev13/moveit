@@ -22,7 +22,7 @@ export function LevelUpModal() {
 
         <footer>
           <button type="button">
-            <a href={`https://twitter.com/intent/tweet?text=${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/twitter/?level=${level}&challenges=${challengesCompleted}&experience=${totalExperience}`}>Compartilhar no Twitter <Twitter /></a>
+            <a href={`https://twitter.com/intent/tweet?text=${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/thumbnail.png?level=${level}&challenges=${challengesCompleted}&experience=${totalExperience}`}>Compartilhar no Twitter <Twitter /></a>
             </button>
         </footer>
       </div>
