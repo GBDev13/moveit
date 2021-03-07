@@ -17,12 +17,19 @@ interface Options {
 export async function getOptions(isDev: boolean): Promise<Options> {
   let options: Options
 
-  
+  if (isDev) {
+    options = {
+      args: [],
+      executablePath: exePath,
+      headless: true
+    }
+  } else {
     options = {
       args: chrome.args,
       executablePath: await chrome.executablePath,
       headless: chrome.headless
     }
+  }
 
   return options
 }
