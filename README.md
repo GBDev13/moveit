@@ -94,6 +94,27 @@ $ yarn install
 # Inicie a aplicação
 $ yarn start
 
+
+
+## Como alterar o tempo do timer? (Está como 6 segundos para testes práticos)
+## Abra o arquivo src/contexts/CountdownContext.tsx
+## Lá você irá encontrar essas linhas:
+
+const [time, setTime] = useState(0.1 * 60)
+setTime(0.1 * 60);
+
+## Para retornar aos 25 minutos, apenas altere o 0.1 para 25
+
+## Também é necessário alterar o tempo da barra de progresso, para
+## fazer essa alteração, acesse o arquivo src/styles/components/ButtonStyles.tsx
+## Lá você irá encontrar essa linha:
+
+animation: roundtime calc(6 * 1s) linear forwards;
+
+## Para retornar aos 25 minutos, altere de 6 * 1s para 1500 * 1s
+
+
+
 # Deploy na Vercel (INFORMAÇÃO SUPER IMPORTANTE)
 # Para o sistema de compartilhamento no twitter funcionar
 # é necessário usar a versão do Node 12.x, que pode ser alterada nas
