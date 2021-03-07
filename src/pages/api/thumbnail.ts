@@ -91,7 +91,7 @@ export default async (
       res.statusCode = 500
       res.setHeader('Content-Type', 'text/html')
       res.end(`<h1>Internal Error</h1><p>${e}</p>`)
-      console.error(e)
+      console.error(e, isDev)
     }
   }
 }

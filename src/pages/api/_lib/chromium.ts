@@ -9,7 +9,7 @@ async function getPage(isDev: boolean): Promise<Page> {
   }
 
   const options = await getOptions(isDev)
-  const browser = await puppeteer.launch({...options, args:['--no-sandbox']});
+  const browser = await puppeteer.launch(options);
 
   _page = await browser.newPage()
 
