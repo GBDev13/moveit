@@ -1,4 +1,4 @@
-import puppeteer, { Page } from 'puppeteer-core'
+import puppeteer, { Page } from 'puppeteer'
 import { getOptions } from './chromeOptions'
 
 let _page: Page | null
