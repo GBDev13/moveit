@@ -34,7 +34,7 @@ export const Container = styled.div`
     opacity:.5;
 
     @media(max-width:640px) {
-      grid-template-columns: .8fr 3fr 2fr 2fr;
+      grid-template-columns: .8fr 5fr 2fr 2fr;
     }
 
     & span:nth-of-type(2){
@@ -62,7 +62,7 @@ export const Container = styled.div`
 
       
       @media(max-width:640px) {
-        grid-template-columns: .8fr 3fr 2fr 2fr;
+        grid-template-columns: .8fr 4fr 2fr 2fr;
       }
 
       & > div:nth-of-type(1) {
@@ -70,6 +70,9 @@ export const Container = styled.div`
         padding:1rem;
         padding-left:2rem;
         width:100%;
+        @media(max-width:640px){
+          padding:.4rem;
+        }
       }
 
       & > .info {
@@ -92,10 +95,12 @@ export const Container = styled.div`
       & .info.double{
         flex-direction:column;
         grid-column:3/6;
+        justify-content:center;
       }
 
       @media(max-width:640px) {
           & > .info {
+            padding:.4rem 0;
             & p {
               font-size:.8rem;
             }
@@ -163,6 +168,7 @@ export const Container = styled.div`
         margin-left: -10px;
         @media(max-width:640px) {
           font-size:1rem;
+          padding:.4rem;
         }
       }
     }
