@@ -30,6 +30,12 @@
 
 &nbsp;
 
+## 🚀 Sistema de compartilhamento no Twitter funcionando
+
+![Feature Twitter](https://user-images.githubusercontent.com/71772559/110251328-c002e280-7f5e-11eb-9091-ae5c1351cd07.gif)
+
+&nbsp;
+
 ## 🥇 Sistema de conquistas funcionando
 
 ![Feature Perfil](https://user-images.githubusercontent.com/71772559/109734003-03480480-7b9f-11eb-8835-891c6a298516.gif)
@@ -74,6 +80,11 @@ $ yarn install
 
 # Inicie a aplicação
 $ yarn start
+
+# Deploy na Vercel (INFORMAÇÃO SUPER IMPORTANTE)
+# Para o sistema de compartilhamento no twitter funcionar
+# é necessário usar a versão do Node 12.x, que pode ser alterada nas
+# configurações do seu projeto
 ```
 
 &nbsp;
