@@ -68,6 +68,12 @@
 
 &nbsp;
 
+## 🖥 Todas as páginas da aplicação
+
+![allpages](https://user-images.githubusercontent.com/71772559/110255830-7e7d3200-7f74-11eb-99c5-d5e060af60b2.png)
+
+&nbsp;
+
 ## ⚙️ Instalação
 ```
 # Abra um terminal e copie este repositório com o comando
