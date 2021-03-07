@@ -18,6 +18,7 @@
 
 ## 👨🏻‍💻 Funcionalidades desenvolvidas por mim, para levar o projeto ao próximo nível
 * Página home, possibilitando o login;
+* Página 404;
 * Login com o Github, puxando suas informações e armazenando as mesmas no MongoDb;
 * Leaderboard, mostrando os usuários com a maior quantidade de desafios concluídos em conta;
 * Design responsivo e contanto com tema dark (tranformado todos os códigos css em styled-components);
