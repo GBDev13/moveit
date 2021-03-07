@@ -24,7 +24,7 @@
 * Sistema de conquistas, que são armazenadas no MongoDb;
 * Página de perfil do usuário, mostrando alguns dados sobre a conta + as conquistas que o mesmo possui;
 * SEO da aplicação;
-* Compartilhamento pelo twitter ao subir de nível, gerando automaticamente uma imagem customizada para cada usuário! (🚧 Em testes 🚧)
+* Compartilhamento pelo twitter ao subir de nível, gerando automaticamente uma página e imagem customizada para cada usuário, com os respectivos dados!
 
 ![mockups](https://user-images.githubusercontent.com/71772559/109436203-39e61980-79fd-11eb-9e22-33efefa0ed38.png)
 
@@ -50,7 +50,6 @@
 * [TypeScript](https://www.typescriptlang.org/)
 * [MongoDb](https://www.mongodb.com/)
 * [Styled Components](https://styled-components.com/)
-* [Handlebars](https://handlebarsjs.com/)
 
 ![ezgif com-optimize (2)](https://user-images.githubusercontent.com/71772559/109437018-7a479680-7a01-11eb-9f7b-23cd97c875e6.gif)
 
