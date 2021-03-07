@@ -20,8 +20,8 @@ export function getHtml({
       <meta name="twitter:description" content="Consegui um novo nível depois de completar ${challenges} desafios no Move.it! Acumulando ${experience} xp!" />
       <meta name="og:description" content="Consegui um novo nível depois de completar ${challenges} desafios no Move.it! Acumulando ${experience} xp!" />
       <meta name="og:title" content="Vamos comemorar! Eu subi para o nível ${level}" />
-      <meta name="twitter:image" content="${`https://youtube-serverless-thumb-generator-rho.vercel.app/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
-      <meta name="og:image" content="${`https://youtube-serverless-thumb-generator-rho.vercel.app/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
+      <meta name="twitter:image" content="${`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
+      <meta name="og:image" content="${`${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
       
       <link rel="shortcut icon" href="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/favicon.png" type="image/png"/>
       <link rel="apple-touch-icon" href="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/favicon.png"></link>
