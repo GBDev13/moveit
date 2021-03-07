@@ -62,6 +62,12 @@
 
 &nbsp;
 
+## 🖌️ Layouts usados nesse projeto
+* [Move.it 1.0 (Desenvolvido em aula)](https://www.figma.com/file/pZbJns12UgFmKhXKDPTli4/Move.it-1.0-(Copy))
+* [Move.it 2.0 (Deixado como desafio)](https://www.figma.com/file/v98FU24x8P7z0nguwTh3pU/Move.it-2.0-(Copy)?node-id=160%3A2761)
+
+&nbsp;
+
 ## ⚙️ Instalação
 ```
 # Abra um terminal e copie este repositório com o comando
