@@ -34,6 +34,7 @@ interface ChallengesContextData {
   resetChallenge: () => void;
   completeChallenge: () => void;
   closeLevelUpModal: () => void;
+  closeBadgeModal: () => void;
   currentBadge:Badge;
 }
 
@@ -73,7 +74,7 @@ export function ChallengesProvider({
   }, [])
 
   function sendLevelBadge() {
-    setIsLevelUpModalOpen(false);
+    // setIsLevelUpModalOpen(false);
     setIsBadgeModalOpen(true)
     const badge = badges.filter(badge => badge.id === `badgelevel${level + 1}`)[0];
     setCurrentBadge(badge)
@@ -86,7 +87,7 @@ export function ChallengesProvider({
   }
 
   function sendChallengeBadge() {
-    setIsLevelUpModalOpen(false);
+    // setIsLevelUpModalOpen(false);
     setIsBadgeModalOpen(true)
     const badge = badges.filter(badge => badge.id === `badgechallenges${challengesCompleted + 1}`)[0];
     setCurrentBadge(badge)
@@ -99,7 +100,7 @@ export function ChallengesProvider({
   }
 
   function sendExperienceBadge(xp:number) {
-    setIsLevelUpModalOpen(false);
+    // setIsLevelUpModalOpen(false);
     setIsBadgeModalOpen(true)
     const badge = badges.filter(badge => badge.id === `badgeexperience${xp}`)[0];
     setCurrentBadge(badge)
@@ -112,7 +113,7 @@ export function ChallengesProvider({
   }
 
   function sendCicleBadge() {
-    setIsLevelUpModalOpen(false);
+    // setIsLevelUpModalOpen(false);
     setIsBadgeModalOpen(true)
     const badge = badges.filter(badge => badge.id === `badgecicle${acumullatedChallenges + 1}`)[0];
     setCurrentBadge(badge)
@@ -142,6 +143,8 @@ export function ChallengesProvider({
 
   function closeLevelUpModal() {
     setIsLevelUpModalOpen(false)
+  }
+  function closeBadgeModal() {
     setIsBadgeModalOpen(false)
   }
 
@@ -201,7 +204,7 @@ export function ChallengesProvider({
     setAcumullatedChallenges(acumullatedChallenges + 1);
     
     if(user_badges){
-      if(totalExperience >= 5000) {
+      if(totalExperience + amount >= 5000) {
         if(!user_badges.filter(badge => {
           if(badge.badge_id === `badgeexperience5000`){
             return badge
@@ -210,7 +213,7 @@ export function ChallengesProvider({
           sendExperienceBadge(5000);
         }
       }
-      if(totalExperience >= 10000) {
+      if(totalExperience + amount >= 10000) {
         if(!user_badges.filter(badge => {
           if(badge.badge_id === `badgeexperience10000`){
             return badge
@@ -219,7 +222,7 @@ export function ChallengesProvider({
           sendExperienceBadge(10000);
         }
       }
-      if(totalExperience >= 20000) {
+      if(totalExperience + amount >= 20000) {
         if(!user_badges.filter(badge => {
           if(badge.badge_id === `badgeexperience20000`){
             return badge
@@ -261,6 +264,7 @@ export function ChallengesProvider({
       resetChallenge,
       completeChallenge,
       closeLevelUpModal,
+      closeBadgeModal,
       totalExperience,
       currentBadge
       }}>

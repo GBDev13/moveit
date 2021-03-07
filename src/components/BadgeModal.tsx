@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
-import { Overlay } from '../styles/components/LevelUpModalStyles';
+import { Overlay } from '../styles/components/BadgeModalStyles';
 
 export function BadgeModal() {
-  const {currentBadge, closeLevelUpModal} = useContext(ChallengesContext);
+  const {currentBadge, closeBadgeModal} = useContext(ChallengesContext);
 
   return (
     <Overlay>
@@ -16,7 +16,7 @@ export function BadgeModal() {
           <strong>Parabéns</strong>
           <p>{currentBadge.description}</p>
 
-          <button type="button" onClick={closeLevelUpModal}>
+          <button type="button" onClick={closeBadgeModal}>
             <img src="/icons/close.svg" alt="Fechar modal"/>
           </button>
         </div>
