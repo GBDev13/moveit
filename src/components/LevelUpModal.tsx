@@ -9,6 +9,7 @@ export function LevelUpModal() {
   console.log(level, challengesCompleted, totalExperience)
   const twitterUrl = `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/thumbnail.png?level=${String(level)}&challenges=${String(challengesCompleted)}&experience=${String(totalExperience)}`
 
+  console.log(twitterUrl)
   return (
     <Overlay>
       <div className="container">
@@ -25,7 +26,7 @@ export function LevelUpModal() {
 
         <footer>
           <button type="button">
-            <a href={`https://twitter.com/intent/tweet?text=${twitterUrl}`}>Compartilhar no Twitter <Twitter /></a>
+            <a target="_blank" href={`https://twitter.com/intent/tweet?text=${twitterUrl}`}>Compartilhar no Twitter <Twitter /></a>
             </button>
         </footer>
       </div>
