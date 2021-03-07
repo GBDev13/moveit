@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@types/puppeteer-core": "^5.4.0",
     "@vercel/node": "^1.9.0",
     "axios": "^0.21.1",
     "babel-plugin-inline-react-svg": "^2.0.1",

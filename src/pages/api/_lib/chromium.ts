@@ -9,7 +9,7 @@ async function getPage(isDev: boolean): Promise<Page> {
   }
 
   const options = await getOptions(isDev)
-  const browser = await puppeteer.launch({...options, ignoreDefaultArgs: ['--disable-extensions']});
+  const browser = await puppeteer.launch(options);
 
   _page = await browser.newPage()
 
