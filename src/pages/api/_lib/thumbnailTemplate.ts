@@ -22,13 +22,16 @@ export function getHtml({
       <meta name="og:title" content="Vamos comemorar! Eu subi para o nível ${level}" />
       <meta name="twitter:image" content="${`https://youtube-serverless-thumb-generator-rho.vercel.app/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
       <meta name="og:image" content="${`https://youtube-serverless-thumb-generator-rho.vercel.app/api/thumbnail.png?image=true&level=${level}&challenges=${challenges}&experience=${experience}`}" />
-      <link rel="stylesheet" href="./style.css" />
+      
+      <link rel="shortcut icon" href="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/favicon.png" type="image/png"/>
+      <link rel="apple-touch-icon" href="${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/favicon.png"></link>
+
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
-      <title>Level Up!</title>
+      <title>Level Up! - Move.it</title>
 
       <style>
         * {
