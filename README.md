@@ -21,7 +21,7 @@
 * Página 404;
 * Login com o Github, puxando suas informações e armazenando as mesmas no MongoDb;
 * Leaderboard, mostrando os usuários com a maior quantidade de desafios concluídos em conta;
-* Design responsivo e contanto com tema dark (tranformado todos os códigos css em styled-components);
+* Design responsivo e contando com tema dark (transformado todos os códigos css em styled-components);
 * Sistema de conquistas, que são armazenadas no MongoDb;
 * Página de perfil do usuário, mostrando alguns dados sobre a conta + as conquistas que o mesmo possui;
 * SEO da aplicação;
@@ -68,6 +68,12 @@
 
 &nbsp;
 
+## 🖥 Todas as páginas da aplicação
+
+![allpages](https://user-images.githubusercontent.com/71772559/110255830-7e7d3200-7f74-11eb-99c5-d5e060af60b2.png)
+
+&nbsp;
+
 ## ⚙️ Instalação
 ```
 # Abra um terminal e copie este repositório com o comando
@@ -87,6 +93,27 @@ $ yarn install
 
 # Inicie a aplicação
 $ yarn start
+
+
+
+## Como alterar o tempo do timer? (Está como 6 segundos para testes práticos)
+## Abra o arquivo src/contexts/CountdownContext.tsx
+## Lá você irá encontrar essas linhas:
+
+const [time, setTime] = useState(0.1 * 60)
+setTime(0.1 * 60);
+
+## Para retornar aos 25 minutos, apenas altere o 0.1 para 25
+
+## Também é necessário alterar o tempo da barra de progresso, para
+## fazer essa alteração, acesse o arquivo src/styles/components/ButtonStyles.tsx
+## Lá você irá encontrar essa linha:
+
+animation: roundtime calc(6 * 1s) linear forwards;
+
+## Para retornar aos 25 minutos, altere de 6 * 1s para 1500 * 1s
+
+
 
 # Deploy na Vercel (INFORMAÇÃO SUPER IMPORTANTE)
 # Para o sistema de compartilhamento no twitter funcionar
@@ -110,6 +137,6 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo de [LICENÇA](h
 
 ---
 
-<p align="center">Feito com 💙 por GBDev13</p>
+<p align="center">Feito com 💙 por Gabriel Borges</p>
 
 
