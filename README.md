@@ -126,7 +126,7 @@ animation: roundtime calc(6 * 1s) linear forwards;
 ### 🔗 Link para o projeto online
 
 
-🚧[MoveIt - (Em Atualizações)](https://moveit-eight-omega.vercel.app)🚧
+[MoveIt](https://moveit-eight-omega.vercel.app)
 
 &nbsp;
 
